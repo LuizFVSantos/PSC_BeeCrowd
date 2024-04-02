@@ -1,0 +1,43 @@
+import java.io.IOException;
+import java.util.*; 
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+    Scanner read = new Scanner(System.in);
+    int n, quantia, testes=0;
+    double coelhos=0, ratos=0, sapos=0;
+    char tipo;
+        n=read.nextInt();
+            while (testes<n){
+            quantia=read.nextInt();
+                if (quantia <1 || quantia >15){
+                    System.out.println("Invalido");
+                }else{
+                    tipo=read.next().charAt(0);
+                    switch(tipo){
+                        case 'C':
+                            coelhos+=quantia;
+                            break;
+                        case 'R':
+                            ratos+=quantia;
+                            break;
+                        case 'S':
+                            sapos+=quantia;
+                            break;
+                        default:
+                        System.out.println("Invalido");
+                    }
+                }
+            testes++;   
+            }
+      System.out.printf("Total: %.0f%s\n",(coelhos+ratos+sapos)," cobaias");
+      System.out.printf("Total de coelhos: %.0f\n",coelhos);
+      System.out.printf("Total de ratos: %.0f\n",ratos);
+      System.out.printf("Total de sapos: %.0f\n",sapos);
+      System.out.printf("Percentual de coelhos: %.2f %s\n",((coelhos*100)/(coelhos+ratos+sapos)),"%");
+      System.out.printf("Percentual de ratos: %.2f %s\n",((ratos*100)/(coelhos+ratos+sapos)),"%");
+      System.out.printf("Percentual de sapos: %.2f %s\n",((sapos*100)/(coelhos+ratos+sapos)),"%");
+    }
+ 
+}
