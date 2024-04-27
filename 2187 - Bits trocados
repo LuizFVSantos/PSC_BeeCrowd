@@ -1,0 +1,42 @@
+import java.io.IOException;
+import java.util.*;
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+        Scanner read = new Scanner(System.in);
+        int[] pedidos = new int[10000000];
+        int tamanho = 0;
+            while(true){
+                int V = read.nextInt();
+                if (V == 0)
+                break;
+                pedidos[tamanho]=V;
+                tamanho++;
+            }
+                for (int i=0; i<tamanho;i++){
+                    int dividendo = pedidos[i];
+                
+                    int divisor1=0, divisor2=0, divisor3=0, divisor4=0;
+//50,10,5,1
+//logica das notas
+                    while (dividendo >= 50) {
+                        dividendo -= 50;
+                        divisor1++;
+                    }
+                    while (dividendo >= 10) {
+                        dividendo -= 10;
+                        divisor2++;
+                    }
+                    while (dividendo >= 5) {
+                        dividendo -= 5;
+                        divisor3++;
+                    }
+                    while (dividendo >= 1) {
+                        dividendo -= 1;
+                        divisor4++;
+                    }
+                    System.out.println("Teste " + (i + 1));
+                    System.out.println(divisor1 + " " + divisor2 + " " + divisor3 + " " + divisor4);
+                }
+    }
+}
